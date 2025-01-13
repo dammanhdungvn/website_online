@@ -1,0 +1,12 @@
+<?php
+if (!defined("_CODE") ) {
+  return die("Access denied");
+}
+
+if (isLogin()) {
+  $token = getSession('loginToken');
+  deleteData('LOGIN_TOKEN', "TOKEN = '$token'");
+  removeSession('loginToken');
+  redirect('?module=auth&action=login');
+} 
+?>

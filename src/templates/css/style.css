@@ -1,0 +1,114 @@
+.login, .forgot, .register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login .row {
+  align-items: center;
+}
+
+.content-login {
+  text-align: center;
+}
+
+.content-login .title {
+  color: var(--blue);
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.content-login .desc {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.form-login, .form-forgot, .form-register {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 40px 30px 60px 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-forgot {
+  text-align: center;
+}
+
+.hr {
+  width: 100%;
+  height: 1.5px;
+  background: #dadada;
+}
+
+
+.forgot .container, .register .container {
+  max-width: 500px;
+}
+
+.forgot .title, .register .title {
+  font-size: 50px;
+  font-weight: 600;
+  color: var(--blue);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.error {
+  color: var(--red);
+  font-size: 90%;
+  font-style: italic;
+}
+
+#questionForm .answers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#questionForm .answers div {
+  display: flex;
+  gap: 10px;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+
+.list_question {
+  margin-top: 40px;
+}
+
+.list_question .table-wrap {
+  color: #333;
+}
+
+
+.list_question table {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.15), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.list_question table thead th {
+  text-align: left;
+  padding-block: 8px;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #ececec;
+  background: lightcyan;
+}
+.list_question table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid #ececec;
+}
+.list_question table th,
+.list_question table td {
+  padding: 16px;
+}
+.list_question table td {
+  vertical-align: middle;
+}
