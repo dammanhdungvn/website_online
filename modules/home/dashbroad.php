@@ -26,7 +26,7 @@ if (!defined("_CODE") ) {
         <img src="<?php echo _WEB_HOST_TEMPLATE .'/images/document.svg'; ?>" class="card-img-top" alt="document" style="width: 60px; margin: 0 auto">
         <div class="card-body text-center">
           <h5 class="card-title">Tạo đề kiểm tra</h5>
-          <a href="?module=home&action=setupKiemtra" class="btn btn-primary">Click</a>
+          <a href="?module=home&action=setupKiemTra" class="btn btn-primary">Click</a>
         </div>
       </div>
     </div>

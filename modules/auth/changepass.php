@@ -23,18 +23,18 @@ if (!isLogin()) {
   $login_token = getSession()['loginToken'];
 
   $sql = "SELECT 
-    USERS.ID, 
-    USERS.EMAIL,
-    USERS.PASSWORD
+    users.ID, 
+    users.EMAIL,
+    users.PASSWORD
 
     FROM 
-        LOGIN_TOKEN
+        login_token
     JOIN 
-        USERS 
+        users 
     ON 
-        LOGIN_TOKEN.USER_ID = USERS.ID
+        login_token.USER_ID = users.ID
     WHERE 
-        LOGIN_TOKEN.TOKEN = '$login_token'";
+        login_token.TOKEN = '$login_token'";
   
   $userQuery = getRow($sql);
   $userID = $userQuery['ID'];
@@ -70,7 +70,7 @@ if (!isLogin()) {
         'UPDATED_AT' => date('Y-m-d H:i:s'),
       ];
                 
-      $updateStatus = updateData('USERS', $passwordUpdate, "ID = '$userID'");
+      $updateStatus = updateData('users', $passwordUpdate, "ID = '$userID'");
 
       if ($updateStatus) {
         setFlashData('msg', 'Cập nhật mật khẩu thành công!');

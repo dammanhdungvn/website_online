@@ -1,6 +1,5 @@
+
 <?php
-
-
 // Hàm INSERT
 function insertData($table, $data) {
   global $conn;

@@ -10,7 +10,7 @@ if (isPost()) {
         'QUESTIONS' => $questions
     ];
 
-    $statusInsert = insertData('SCORE', $insData);
+    $statusInsert = insertData('score', $insData);
 
     if ($statusInsert) {
         echo "Điểm số đã được lưu: " . $score; 

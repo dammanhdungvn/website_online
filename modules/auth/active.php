@@ -12,7 +12,7 @@
 // Xử lý kích hoạt tài khoản
 if (!empty($token)) {
     // Truy vấn để kiểm  tra token với CSDL 
-    $sql = "SELECT `ID` FROM USERS WHERE ACTIVE_TOKEN = '$token'";
+    $sql = "SELECT `ID` FROM users WHERE ACTIVE_TOKEN = '$token'";
     $tokenQuery = getRow($sql);
 
   if (!empty($tokenQuery)) {
@@ -21,7 +21,7 @@ if (!empty($token)) {
       'STATUS' => 1,
       'ACTIVE_TOKEN' => null,
     ];
-    $updateStatus = updateData('USERS', $dataUpdate, "ID = '$userId'");
+    $updateStatus = updateData('users', $dataUpdate, "ID = '$userId'");
 
     if ($updateStatus) {
       setFlashData('msg', 'Kích hoạt tài khoản thành công!');

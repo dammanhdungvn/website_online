@@ -23,21 +23,21 @@ if (!isLogin()) {
   $login_token = getSession()['loginToken'];
 
   $sql = "SELECT 
-    USERS.ID,
-    USERS.FIRSTNAME,
-    USERS.LASTNAME, 
-    USERS.EMAIL,
-    USERS.PASSWORD,
-    USERS.PHONE
+    users.ID,
+    users.FIRSTNAME,
+    users.LASTNAME, 
+    users.EMAIL,
+    users.PASSWORD,
+    users.PHONE
 
     FROM 
-        LOGIN_TOKEN
+        login_token
     JOIN 
-        USERS 
+        users 
     ON 
-        LOGIN_TOKEN.USER_ID = USERS.ID
+        login_token.USER_ID = users.ID
     WHERE 
-        LOGIN_TOKEN.TOKEN = '$login_token'";
+        login_token.TOKEN = '$login_token'";
   
   $userQuery = getRow($sql);
   $userEmail = $userQuery['EMAIL'];
@@ -90,7 +90,7 @@ if (!isLogin()) {
       ];
 
       
-      $updateStatus = updateData('USERS', $dataInsert, "ID = '$userID'");
+      $updateStatus = updateData('users', $dataInsert, "ID = '$userID'");
       if ($updateStatus) {
         setFlashData('msg', 'Cập nhật thành công!');
         setFlashData('msg_type', 'success');    

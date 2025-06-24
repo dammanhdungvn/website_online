@@ -20,7 +20,7 @@ if (!defined("_CODE") ) {
 ?>
 
 <?php
-  $sql = "SELECT * FROM `SCORE`;";
+  $sql = "SELECT * FROM `score`;";
   $scores = getRows($sql);
 ?>
 

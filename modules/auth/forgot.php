@@ -20,7 +20,7 @@ layouts('header', $data);
     
     if (!empty($filterAll['email'])) {
       $email =  $filterAll['email'];
-      $sql = "SELECT `ID` FROM USERS WHERE EMAIL = '$email'";
+      $sql = "SELECT `ID` FROM users WHERE EMAIL = '$email'";
       $userQuery = getRow($sql);
 
       if ($userQuery) {
@@ -31,7 +31,7 @@ layouts('header', $data);
           'FORGOT_TOKEN' => $forgotToken,
         ];
 
-        $updateStatus = updateData('USERS', $dataUpdate, "ID = '$userID'");
+        $updateStatus = updateData('users', $dataUpdate, "ID = '$userID'");
 
         if ($updateStatus) {
           // Tạo link reset mật khẩu

@@ -15,7 +15,7 @@ layouts('header', $data);
 
   if (!empty($token)) {
     //Truy vấn CSDL kiểm tra token
-    $sql = "SELECT `ID`, `EMAIL` FROM USERS WHERE FORGOT_TOKEN = '$token'";
+    $sql = "SELECT `ID`, `EMAIL` FROM users WHERE FORGOT_TOKEN = '$token'";
     $tokenQuery = getRow($sql);
 
     if (!empty($tokenQuery)) {
@@ -55,7 +55,7 @@ layouts('header', $data);
             'UPDATED_AT' => date('Y-m-d H:i:s'),
           ];
           $userID = $tokenQuery['ID'];
-          $updateStatus = updateData('USERS', $passwordUpdate, "ID = '$userID'");
+          $updateStatus = updateData('users', $passwordUpdate, "ID = '$userID'");
 
           if ($updateStatus) {
             setFlashData('msg', 'Cập nhật mật khẩu thành công!');

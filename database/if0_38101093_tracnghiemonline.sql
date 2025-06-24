@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th1 13, 2025 lúc 04:31 AM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.2.12
+-- Host: sql211.infinityfree.com
+-- Generation Time: Jun 24, 2025 at 06:10 AM
+-- Server version: 10.6.19-MariaDB
+-- PHP Version: 7.2.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `btl_web_humg`
+-- Database: `if0_38101093_tracnghiemonline`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `answers`
+-- Table structure for table `answers`
 --
 
 CREATE TABLE `answers` (
@@ -32,10 +33,10 @@ CREATE TABLE `answers` (
   `question_id` int(11) NOT NULL,
   `answer` text NOT NULL,
   `is_correct` tinyint(1) DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `answers`
+-- Dumping data for table `answers`
 --
 
 INSERT INTO `answers` (`id`, `question_id`, `answer`, `is_correct`) VALUES
@@ -87,15 +88,19 @@ INSERT INTO `answers` (`id`, `question_id`, `answer`, `is_correct`) VALUES
 (158, 54, 'Âu lạc', 0),
 (159, 54, 'Việt Nam', 0),
 (160, 54, 'Trung Quốc', 0),
-(161, 55, '1', 0),
-(162, 55, '2', 0),
-(163, 55, '3', 1),
-(164, 55, '4', 0);
+(169, 57, '1', 0),
+(170, 57, '2', 0),
+(171, 57, '3', 1),
+(172, 57, '4', 0),
+(173, 58, '1', 0),
+(174, 58, '2', 0),
+(175, 58, '3', 0),
+(176, 58, '4', 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `login_token`
+-- Table structure for table `login_token`
 --
 
 CREATE TABLE `login_token` (
@@ -105,31 +110,32 @@ CREATE TABLE `login_token` (
   `EXPIRES_AT` datetime NOT NULL,
   `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `login_token`
+-- Dumping data for table `login_token`
 --
 
 INSERT INTO `login_token` (`TOKEN_ID`, `USER_ID`, `TOKEN`, `EXPIRES_AT`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(16, 3, '9270eb98c7337402eb2d48e2ec3077ef9207b785', '0000-00-00 00:00:00', '2024-12-26 21:38:21', '2024-12-27 03:38:21'),
-(19, 3, '45d2c0ad3a6262d84bdc967a9c8a4b2d34e3136e', '0000-00-00 00:00:00', '2025-01-03 04:36:43', '2025-01-03 10:36:43'),
-(21, 3, 'e864bf31fc92026d388387d282376a535c75a2b4', '0000-00-00 00:00:00', '2025-01-12 01:58:24', '2025-01-12 07:58:24');
+(26, 4, '5306b124309b35d4f2d34847c5506b6b3c2e2e22', '0000-00-00 00:00:00', '2025-01-17 08:08:47', '2025-01-17 05:08:47'),
+(31, 4, '78a1b772fa6c1f5b18cc1e2112a6c4dc086ced3a', '0000-00-00 00:00:00', '2025-01-18 06:36:13', '2025-01-18 03:36:13'),
+(32, 9, '074784c7535464ac416404b7b15ed17bce65738e', '0000-00-00 00:00:00', '2025-02-24 11:29:55', '2025-02-24 08:29:55'),
+(33, 4, 'efacd2de42c924d5c09ecb227ba40c96e5c35e92', '0000-00-00 00:00:00', '2025-04-11 12:59:49', '2025-04-11 09:59:49');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `questions`
+-- Table structure for table `questions`
 --
 
 CREATE TABLE `questions` (
   `id` int(11) NOT NULL,
   `question` text NOT NULL,
   `subject_id` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `questions`
+-- Dumping data for table `questions`
 --
 
 INSERT INTO `questions` (`id`, `question`, `subject_id`) VALUES
@@ -145,12 +151,13 @@ INSERT INTO `questions` (`id`, `question`, `subject_id`) VALUES
 (10, 'Trong các hệ điều hành sau, hệ điều hành nào không phải là bản phân phối của Linux?', 8),
 (53, '1 + 1 = ?', 1),
 (54, 'Nhà nước đầu tiên của nước ta là gì?', 3),
-(55, '1+2 = ?', 1);
+(57, '1 + 2 = ?', 1),
+(58, '1 + 3 = ?', 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `score`
+-- Table structure for table `score`
 --
 
 CREATE TABLE `score` (
@@ -158,28 +165,31 @@ CREATE TABLE `score` (
   `POINT` int(11) NOT NULL,
   `QUESTIONS` int(11) NOT NULL,
   `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `score`
+-- Dumping data for table `score`
 --
 
 INSERT INTO `score` (`ID`, `POINT`, `QUESTIONS`, `CREATED_AT`) VALUES
-(68, 1, 2, '2025-01-13 02:37:26');
+(68, 1, 2, '2025-01-13 02:37:26'),
+(69, 1, 1, '2025-01-15 15:30:06'),
+(70, 1, 1, '2025-01-17 04:49:18'),
+(71, 2, 2, '2025-01-17 04:53:55');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `subjects`
+-- Table structure for table `subjects`
 --
 
 CREATE TABLE `subjects` (
   `id` int(11) NOT NULL,
   `name_subject` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `subjects`
+-- Dumping data for table `subjects`
 --
 
 INSERT INTO `subjects` (`id`, `name_subject`) VALUES
@@ -197,7 +207,7 @@ INSERT INTO `subjects` (`id`, `name_subject`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -212,29 +222,33 @@ CREATE TABLE `users` (
   `STATUS` int(11) NOT NULL DEFAULT 0,
   `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`ID`, `FIRSTNAME`, `LASTNAME`, `EMAIL`, `PHONE`, `PASSWORD`, `FORGOT_TOKEN`, `ACTIVE_TOKEN`, `STATUS`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(3, 'Dung', 'Dammm1221', 'tragiccoffee@freesourcecodes.com', '0987654321', '$2y$10$4gZklhO4bVPByrpdBKD2Ee5XjdPOgyQ4OUQTQqmSV3gS.tJuMzCwO', NULL, '', 1, '2024-12-23 02:10:04', '2025-01-03 15:30:50'),
-(4, 'Dung', 'Dammm', 'trangngoc@gmail.com', '0987654321', '$2y$10$GlzCLOhl7g4rBN9YtQLVjuprgQNAn8a27daYGiYpxm6G3uy0slK3e', NULL, '', 1, '2024-12-25 03:38:47', '2025-01-03 15:28:57');
+(3, 'Du', 'Con', 'tragiccoffee@freesourcecodes.com', '0987654321', '$2y$10$1NZleZsyYoacfF5wxhRhzOitb1hPL3Db81e7qaIDXlFwsTQQUY2VG', NULL, '', 1, '2024-12-23 02:10:04', '2025-01-17 07:37:34'),
+(4, 'Dung', 'Dammm', 'trangngoc@gmail.com', '0987654321', '$2y$10$GlzCLOhl7g4rBN9YtQLVjuprgQNAn8a27daYGiYpxm6G3uy0slK3e', NULL, '', 1, '2024-12-25 03:38:47', '2025-01-03 15:28:57'),
+(6, 'Dung', 'Dam', 'deptraino1vn@gmail.com', '0123456789', '$2y$10$U/NIXObLi.LeJUj0xG93p.IyZHh1DreVXWs9C46qQY.C67OPLoxKe', '', '', 1, '2025-01-17 07:58:47', '2025-01-17 08:01:23'),
+(7, 'đức thắng ', 'vũ ', 'vuduct728@gmail.com', '0941069975', '$2y$10$M.Jg5g3pqAB1Qd4YrgXvDuFpL0tT0LDGQrhQd.vfHNhQYXDq73B7a', NULL, '33bb4c54ddbe5c6c98120266caf3a1235ac20e4c', 0, '2025-01-18 10:41:02', '2025-01-18 07:41:02'),
+(8, 'đức thắng ', 'vũ ', 'vuduct2604@gmail.com', '0941069975', '$2y$10$S2/thKjG1c06jN2lHwMojO7T5p1H1eezrVL.dcYGc/VguOdTDKUP6', NULL, '980da3294f98c00c6b67f99ab34c2ffd5e5ba50e', 0, '2025-01-18 10:42:16', '2025-01-18 07:42:16'),
+(9, 'Dung', 'Dam', '77clinical@e-record.com', '0987654321', '$2y$10$/CbII.0KW1bkZKrvMoiDsuL4AYtpiZF5J/5rmY7jaH2eu9zEkYWUu', NULL, '', 1, '2025-02-22 09:54:32', '2025-02-24 08:29:37');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `answers`
+-- Indexes for table `answers`
 --
 ALTER TABLE `answers`
   ADD PRIMARY KEY (`id`),
   ADD KEY `answers_ibfk_1` (`question_id`);
 
 --
--- Chỉ mục cho bảng `login_token`
+-- Indexes for table `login_token`
 --
 ALTER TABLE `login_token`
   ADD PRIMARY KEY (`TOKEN_ID`),
@@ -242,89 +256,89 @@ ALTER TABLE `login_token`
   ADD KEY `USER_ID` (`USER_ID`);
 
 --
--- Chỉ mục cho bảng `questions`
+-- Indexes for table `questions`
 --
 ALTER TABLE `questions`
   ADD PRIMARY KEY (`id`),
   ADD KEY `fk_subject_id` (`subject_id`);
 
 --
--- Chỉ mục cho bảng `score`
+-- Indexes for table `score`
 --
 ALTER TABLE `score`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Chỉ mục cho bảng `subjects`
+-- Indexes for table `subjects`
 --
 ALTER TABLE `subjects`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`ID`),
   ADD UNIQUE KEY `EMAIL` (`EMAIL`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `answers`
+-- AUTO_INCREMENT for table `answers`
 --
 ALTER TABLE `answers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=177;
 
 --
--- AUTO_INCREMENT cho bảng `login_token`
+-- AUTO_INCREMENT for table `login_token`
 --
 ALTER TABLE `login_token`
-  MODIFY `TOKEN_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `TOKEN_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT cho bảng `questions`
+-- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
--- AUTO_INCREMENT cho bảng `score`
+-- AUTO_INCREMENT for table `score`
 --
 ALTER TABLE `score`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT cho bảng `subjects`
+-- AUTO_INCREMENT for table `subjects`
 --
 ALTER TABLE `subjects`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `answers`
+-- Constraints for table `answers`
 --
 ALTER TABLE `answers`
   ADD CONSTRAINT `answers_ibfk_1` FOREIGN KEY (`question_id`) REFERENCES `questions` (`id`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `login_token`
+-- Constraints for table `login_token`
 --
 ALTER TABLE `login_token`
   ADD CONSTRAINT `login_token_ibfk_1` FOREIGN KEY (`USER_ID`) REFERENCES `users` (`ID`) ON DELETE CASCADE;
 
 --
--- Các ràng buộc cho bảng `questions`
+-- Constraints for table `questions`
 --
 ALTER TABLE `questions`
   ADD CONSTRAINT `fk_subject_id` FOREIGN KEY (`subject_id`) REFERENCES `subjects` (`id`);

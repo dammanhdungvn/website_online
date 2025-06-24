@@ -2,19 +2,27 @@
 header("Access-Control-Allow-Origin: *");
 header('Content-Type: application/json');
 
-// Kết nối cơ sở dữ liệu
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "btl_web_humg";
+// // Kết nối cơ sở dữ liệu
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "btl_web_humg";
+// $port = 3306;
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
+$servername = "sql211.infinityfree.com";
+$username = "if0_38101093";
+$password = "yrKlCIa3q1SpcTX";
+$dbname = "if0_38101093_tracnghiemonline";
+$port = 3306;
+
+$conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 
 // Kiểm tra kết nối
 if (!$conn) {
     echo json_encode(["error" => "Failed to connect to database"]);
     exit();
 }
+
 
 $limit = isset($_GET['limit']) ? intval($_GET['limit']) : null;
 $skip = isset($_GET['skip']) ? intval($_GET['skip']) : null;

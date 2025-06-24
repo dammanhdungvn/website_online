@@ -45,7 +45,7 @@ $data = [
     }
     else {
       $email = $filterAll['email'];
-      $sql = "SELECT ID FROM USERS WHERE EMAIL = '$email'";
+      $sql = "SELECT ID FROM users WHERE EMAIL = '$email'";
       if (countRows($sql) > 0) {
         $errors['email']['unique'] = 'Email đã tồn tại!';
       }
@@ -97,7 +97,7 @@ $data = [
       ];
 
       
-      $insert = insertData('USERS', $dataInsert);
+      $insert = insertData('users', $dataInsert);
       if ($insert) {
         
         // Tạo link kích hoạt tài khoản

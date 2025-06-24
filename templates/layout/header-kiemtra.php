@@ -12,7 +12,7 @@ if (!defined("_CODE") ) {
   <title><?php echo !empty($data['pageTitle']) ? $data['pageTitle'] : "Trang chủ"; ?></title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE?>/css/base.css?ver=<?php echo rand()?>">
-  <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE?>/css/style.css?ver=<?php echo rand()?>">
+  <link rel="stylesheet" href="<?php echo _WEB_HOST_TEMPLATE?>/css/kiemtra.css?ver=<?php echo rand()?>">
  
 </head>
 <body>
@@ -28,11 +28,9 @@ if (!defined("_CODE") ) {
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li><a href="?module=home&action=dashbroad" class="nav-link px-2 link-body-emphasis">Trang chủ</a></li>
-          <li><a href="?module=home&action=setupKiemtra" class="nav-link px-2 link-body-emphasis">Tạo đề kiểm tra</a></li>
-          <li><a href="?module=home&action=question" class="nav-link px-2 link-body-emphasis">Thêm câu hỏi</a></li>
+          <li><a href="?module=home&action=setupKiemTra" class="nav-link px-2 link-body-emphasis">Tạo đề kiểm tra</a></li>
           <li><a href="?module=home&action=list_question" class="nav-link px-2 link-body-emphasis">Ngân hàng câu hỏi</a></li>
           <li><a href="?module=home&action=score" class="nav-link px-2 link-body-emphasis">Kết quả thi</a></li>
-          <!-- <li><a href="?module=home&action=setupKiemtra" class="nav-link px-2 link-body-emphasis">Xem kết quả thi</a></li> -->
         </ul>
 
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

@@ -1,3 +1,4 @@
+
 <?php
 if (!defined("_CODE") ) {
   return die("Access denied");
@@ -18,11 +19,12 @@ $data = [
   
   if (isPost()) {
     $filterAll = filter();
+    
     if (!empty(trim($filterAll['email'])) && !empty(trim($filterAll['password']))) {
 
       $email = $filterAll['email'];
       $password = $filterAll['password'];
-      
+    
       //Truy vấn lấy thông tin trong CSDL
       $sql = "SELECT `PASSWORD`, `ID`, `STATUS` FROM `users` WHERE EMAIL = '$email'";
       $userQuery = getRow($sql);
@@ -50,7 +52,7 @@ $data = [
               'CREATED_AT' => date('Y-m-d H:i:s'),
             ];
   
-            $insertStatus = insertData('LOGIN_TOKEN', $dataInsert);
+            $insertStatus = insertData('login_token', $dataInsert);
             var_dump($insertStatus);
             if($insertStatus == true) {
               //Insert thành công
@@ -97,12 +99,12 @@ $data = [
 <section class="login">
   <div class="container">
     <div class="row">
-      <div class="col-7 content-login">
-        <h1 class="title">NHÓM 2</h1>
+      <div class="col-xl-7 col-lg-6 col-md-12 col-sm-12 col-xs-12 content-login">
+        <h1 class="title">DMD</h1>
         <p class="desc">Nền tảng tạo và chấm bài trắc nghiệm online</p>
       </div>
 
-        <div class="col-5">
+        <div class="col-xl-5 col-lg-6 col-md-12 col-sm-12 col-xs-12">
 
         <?php
           if (!empty($msg)) {
@@ -110,7 +112,7 @@ $data = [
           }
         ?>
 
-        <form action="" method="post" class="form-login">
+        <form method="post" class="form-login">
           <div class="input-email">
             <input type="email" placeholder="Email" class="form-control" name="email" value="<?php 
               echo form_value('email', $oldData, null);

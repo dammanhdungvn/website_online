@@ -5,7 +5,7 @@ if (!defined("_CODE") ) {
 
 if (isLogin()) {
   $token = getSession('loginToken');
-  deleteData('LOGIN_TOKEN', "TOKEN = '$token'");
+  deleteData('login_token', "TOKEN = '$token'");
   removeSession('loginToken');
   redirect('?module=auth&action=login');
 } 

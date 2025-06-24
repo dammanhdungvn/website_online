@@ -1,3 +1,4 @@
+
 <?php
 if (!defined("_CODE") ) {
   return die("Access denied");
@@ -10,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;
 // Hàm thêm layout 
 function layouts ($layoutName = 'header', $data = []) {
   if (file_exists(_PATH_TEMPLATES .'/layout/'.$layoutName.'.php')) {
-    include _PATH_TEMPLATES .'/layout/'.$layoutName.'.php';
+    require_once _PATH_TEMPLATES .'/layout/'.$layoutName.'.php';
   }
 }
  

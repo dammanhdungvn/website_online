@@ -3,7 +3,7 @@
 
 // Hằng số chung của ứng dụng
 const _MODULE = "home";
-const _ACTION = "dashbroad"; // Sửa sai chính tả từ "dashbroad"
+const _ACTION = "dashbroad";
 const _CODE = true;
 
 // Thiết lập host
